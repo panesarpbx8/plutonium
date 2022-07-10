@@ -10,7 +10,7 @@
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run universal:server",
     "prerender": "ng run universal:prerender",
-    "git": "git add . && git commit -m init"
+    "git": "git add . && git commit -m refactor"
   },
   "private": true,
   "dependencies": {
