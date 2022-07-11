@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { constants } from './app.constants';
 import { routes } from './app.routes';
 import { BaseComponent } from './container/base/base.component';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,9 @@ import { BaseComponent } from './container/base/base.component';
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     HttpClientModule,
+    TransferHttpCacheModule,
+    
+    // standalone components
     BaseComponent,
   ],
   bootstrap: [AppComponent]

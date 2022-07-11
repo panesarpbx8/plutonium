@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RenderArticleModule } from '../../layouts/render-article/render-article.module';
-import { ArticleService } from '../../access/article.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable, switchMap, tap } from 'rxjs';
-import { Article, Toc } from 'src/app/shared/types/article';
-import { ArticleHeroComponent } from '../../layouts/article-hero/article-hero.component';
-import { TocComponent } from '../../layouts/toc/toc.component';
-import { LatestArticlesComponent } from '../../layouts/latest-articles/latest-articles.component';
-import { SimilarArticlesComponent } from '../../layouts/similar-articles/similar-articles.component';
-import { SaveButtonComponent } from '../../layouts/save-button/save-button.component';
-import { LoaderComponent } from 'src/app/shared/layouts/loader/loader.component';
+import { map, switchMap, tap } from 'rxjs';
 import { SeoService } from 'src/app/shared/access/seo.service';
+import { LoaderComponent } from 'src/app/shared/layouts/loader/loader.component';
+import { Toc } from 'src/app/shared/types/article';
+import { ArticleService } from '../../access/article.service';
+import { ArticleHeroComponent } from '../../layouts/article-hero/article-hero.component';
+import { LatestArticlesComponent } from '../../layouts/latest-articles/latest-articles.component';
+import { RenderArticleModule } from '../../layouts/render-article/render-article.module';
+import { SaveButtonComponent } from '../../layouts/save-button/save-button.component';
+import { SimilarArticlesComponent } from '../../layouts/similar-articles/similar-articles.component';
+import { TocComponent } from '../../layouts/toc/toc.component';
 
 @Component({
   selector: 'app-article',
@@ -52,6 +52,10 @@ export class ArticleComponent implements OnInit {
 
   setTocs(tocs: Toc[]) {
     this.tocs = tocs;
+  }
+
+  fetchServerArticle() {
+    
   }
 
 }

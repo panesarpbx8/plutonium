@@ -36,7 +36,7 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "front-matter"
+              "gray-matter"
             ]
           },
           "configurations": {

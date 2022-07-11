@@ -1,21 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, zip } from 'rxjs';
-import { Article } from 'src/app/shared/types/article';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import * as graymatter from 'gray-matter';
 import frontmatter from 'front-matter';
+import { map, Observable, zip } from 'rxjs';
 import { constants } from 'src/app/app.constants';
+import { Article } from 'src/app/shared/types/article';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class ArticleService {
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platform: Object,
+    private http: HttpClient
+  ) {}
 
   findAll(): Observable<Article[]> {
     const slugs = constants.articles.slugs;
     const articles$arr = slugs.map(slug => this.findBySlug(slug));
 
-    return zip(articles$arr)
-      .pipe(map(articles => this.sortArticlesByDate(articles)));;
+    return zip(articles$arr).pipe(
+      map(articles => this.sortArticlesByDate(articles))
+    );
   }
   
   findBySlug(slug: string): Observable<Article> {
@@ -50,8 +56,17 @@ export class ArticleService {
   }
 
   private processRawArticle(md: string, slug: string): Article {
-    const { attributes, body } = frontmatter(md);
-    const fields = attributes as any;
+    let content: string, fields: any;
+
+    if (isPlatformBrowser(this.platform)) {
+      let front = frontmatter(md);
+      content = front.body;
+      fields = front.attributes;
+    } else {
+      let gray = graymatter(md);
+      content = gray.content;
+      fields = gray.data;
+    }
 
     return {
       title: fields.title,
@@ -62,7 +77,7 @@ export class ArticleService {
       author: fields.author,
       authorImage: fields.authorImage,
       authorLink: fields.authorLink,
-      body,
+      body: content,
       slug,
       coverUrl: this.getCoverUrl(slug),
     };
