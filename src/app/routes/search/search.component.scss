@@ -1,0 +1,16 @@
+.search-input {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+
+  input {
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    font-size: 1.25rem;
+    padding: .75rem 1.5rem;
+  }
+}
+
+.empty {
+  text-align: center;
+  font-size: 1.5rem;
+}

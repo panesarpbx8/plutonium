@@ -1,0 +1,23 @@
+<section class="route">
+  <h1 class="page-heading force-center">Featured</h1>
+
+  <div class="featured-article">
+    <app-featured-article 
+      *ngIf="featuredArticle$ | async as article; else loading" 
+      [article]="article">
+    </app-featured-article>
+  </div>
+
+  <h1 class="page-heading force-center">All Articles</h1>
+
+  <div class="article-list">
+    <app-article-list
+      *ngIf="articles$ | async as articles; else loading" 
+      [articles]="articles">
+    </app-article-list>
+  </div>
+
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
+</section>

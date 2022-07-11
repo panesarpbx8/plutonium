@@ -1,1 +1,12 @@
-<p>home works!</p>
+
+<div class="featured-article">
+  <app-featured-article
+    *ngIf="featuredArticle$ | async as article"
+    [article]="article">
+  </app-featured-article>
+</div>
+
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

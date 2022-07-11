@@ -1,0 +1,20 @@
+<ng-container *ngIf="user$ | async as user; else noUser">
+  <button *ngIf="user.saved.includes(slug); else notSaved"
+    class="save-btn btn btn__danger-outlined" 
+    (click)="unsave(slug)">
+    Already Saved!
+  </button>
+   <ng-template #notSaved>
+    <button class="save-btn btn btn__success-outlined" 
+      (click)="save(slug)">
+      Save this blog
+    </button>
+  </ng-template>
+</ng-container>
+
+<ng-template #noUser>
+  <a routerLink="/login">
+    <button class="save-btn btn btn__primary-outlined">Login to save</button>
+  </a>
+</ng-template>
+

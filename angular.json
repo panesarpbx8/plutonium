@@ -28,12 +28,16 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/content"
             ],
             "styles": [
               "src/global.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "front-matter"
+            ]
           },
           "configurations": {
             "production": {

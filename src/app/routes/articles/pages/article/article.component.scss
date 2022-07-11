@@ -1,0 +1,37 @@
+.article-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.latest-articles {
+  margin-bottom: 3rem;
+
+  h2 {
+    margin-bottom: 2rem;
+    padding: .5rem 1rem;
+    border-left: 4px solid var(--anchor-color);
+    background-color: var(--bgv);
+    color: unset;
+  }
+}
+
+.similar-articles {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 888px) {
+  .article-wrapper {
+    grid-template-columns: 2fr 5fr;
+    gap: 3rem;
+  }
+
+  .similar-articles {
+    font-size: 2rem;
+  }
+}
+

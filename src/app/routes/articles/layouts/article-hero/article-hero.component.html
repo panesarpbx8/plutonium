@@ -1,0 +1,14 @@
+<div class="article-hero route">
+  <h1 class="article-hero__title page-heading">{{ article.title }}</h1>
+  <div class="article-hero__matter">
+    <div class="article-hero__matter__author">
+      <img class="rounded" [src]="article.authorImage">
+      <p>By <a target="_blank" rel="noreferrer" [href]="article.authorLink">{{ article.author }}</a></p>
+    </div>
+    <p>Posted {{ article.createdAt }}</p>
+    <a target="_blank" rel="noreferrer" [href]="article.source">Source Code</a>
+  </div>
+  <p class="article-hero__headline">{{ article.headline }}</p>
+
+  <app-hashtag-list [hashtags]="article.hashtags"></app-hashtag-list>
+</div>

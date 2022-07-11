@@ -1,0 +1,55 @@
+.article-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0 7rem 0;
+  
+  &__title {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  &__matter {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &__author {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  &__headline {
+    max-width: 50ch;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    border-left: .2rem solid var(--primary-color);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .article-hero {
+    &__title {
+      font-size: 3.5rem;
+    }
+
+    &__matter {
+      flex-direction: row;
+    }
+
+    &__headline {
+      font-size: 1.25rem;
+    }
+  }
+}

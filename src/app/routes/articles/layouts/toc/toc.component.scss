@@ -1,0 +1,18 @@
+.toc {
+  position: sticky;
+  top: 7.5rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    border-left: 4px solid var(--anchor-color);
+    background-color: var(--bgv);
+    color: unset;
+  }
+  
+  a {
+    display: block;
+    margin-bottom: .75rem;
+    padding-left: 1rem;
+  }
+}

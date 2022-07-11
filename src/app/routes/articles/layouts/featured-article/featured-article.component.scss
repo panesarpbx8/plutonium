@@ -1,0 +1,58 @@
+:host {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.article {
+  display: grid;
+  gap: 1rem;
+  height: fit-content;
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__headline {
+    font-size: 1.25rem;
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge {
+  user-select: none;
+  background-color: var(--accent-color);
+  padding: .5rem 1rem;
+  border-radius: 100px;
+  color: var(--bg);
+  max-width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button {
+  max-width: fit-content;
+}
+
+img {
+  border-radius: 3px;
+  position: relative;
+}
+
+
+@media screen and (min-width: 888px) {
+  :host {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .article {
+    gap: 1.5rem;
+  }
+}

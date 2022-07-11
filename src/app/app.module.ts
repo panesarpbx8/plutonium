@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { constants } from './app.constants';
 import { routes } from './app.routes';
+import { BaseComponent } from './container/base/base.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { routes } from './app.routes';
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     HttpClientModule,
+    BaseComponent,
   ],
   bootstrap: [AppComponent]
 })

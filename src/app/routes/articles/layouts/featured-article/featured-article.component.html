@@ -1,0 +1,19 @@
+<div class="article">
+  <div class="heading">
+    <span class="badge">Featured</span>
+    <app-hashtag-list [hashtags]="article.hashtags"></app-hashtag-list>
+  </div>
+
+  <h1 class="article__title">{{ article.title }}</h1>
+
+  <app-article-metadata [article]="article"></app-article-metadata>
+
+  <p class="article__headline">{{ article.headline }}</p>
+
+
+  <button class="btn btn__primary" routerLink="/articles/{{ article.slug }}">Read more</button>
+</div>
+
+<div class="cover">
+  <img [src]="article.coverUrl" [alt]="article.title">
+</div>

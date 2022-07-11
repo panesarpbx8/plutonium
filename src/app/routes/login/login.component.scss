@@ -1,0 +1,58 @@
+.route {
+	display: grid;
+	max-width: 850px;
+	margin: 3rem auto;
+	gap: 2rem;
+}
+
+.login-form {
+	order: 1;
+
+	.page-heading {
+		margin-bottom: 1rem;
+	}
+
+	.slash {
+		user-select: none;
+	}
+}
+
+.separator {
+	height: 100%;
+	background-color: var(--focus);
+	display: none;
+}
+
+.oauth {
+	order: 3;
+
+	&__heading {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	&__buttons {
+		display: grid;
+		gap: 1.5rem;
+	}
+}
+
+.float-right {
+	float: right;
+}
+
+@media screen and (min-width: 888px) {
+	.route {
+		grid-template-columns: 4fr 2px 3fr;
+		gap: 5rem;
+	}
+
+	.separator {
+		display: block;
+		order: 2;
+	}
+
+	.oauth {
+		order: 3;
+	}
+}

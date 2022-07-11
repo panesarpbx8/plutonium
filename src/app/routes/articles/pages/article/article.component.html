@@ -1,0 +1,37 @@
+<article *ngIf="article$ | async as article; else loading">
+  <app-article-hero [article]="article"></app-article-hero>
+
+  <section class="route">
+    <div class="article-wrapper">
+      <div>
+        <app-save-button [slug]="article.slug"></app-save-button>
+        <div class="latest-articles">
+          <h2>Latest Article</h2>
+          <app-latest-articles [articles]="articles$ | async" [count]="1"></app-latest-articles>
+        </div>
+        <app-toc [md]="article.body" (tocsEvent)="setTocs($event)"></app-toc>
+      </div>
+      
+      <div>
+        <img [src]="article.coverUrl" alt="article_cover">
+        <app-render-article 
+          [slug]="article.slug" 
+          [md]="article.body" 
+          [tocs]="tocs">
+        </app-render-article>
+
+        <p class="similar-articles"><strong>Similar to</strong> {{ article.title }}</p>
+        <app-similar-articles 
+          [currentArticleTitle]="article.title" 
+          [hashtags]="article.hashtags" 
+          [allArticles]="articles$ | async" 
+          [count]="2">
+        </app-similar-articles>
+      </div>
+    </div>
+  </section>
+</article>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>  

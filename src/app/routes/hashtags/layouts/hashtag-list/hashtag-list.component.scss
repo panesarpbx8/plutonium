@@ -1,0 +1,63 @@
+.hashtags {
+  display: flex;
+	flex-wrap: wrap;
+  gap: 1rem;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.hashtag {
+  transition: opacity 200ms ease-in-out;
+	background-color: var(--text);
+	color: var(--bgv);
+	padding: .25rem .75rem;
+	font-size: 1.1rem;
+
+  &:hover {
+		opacity: .85;
+  }
+}
+
+.angular, .nestjs {
+	color: white; 
+	background-color: #E83749; 
+}
+
+.node, .vue {
+	color: white; 
+	background-color: #12c273; 
+}
+
+.sass, .rxjs {
+	color: white;
+	background-color: #F06292; 
+}
+
+.javascript, .firebase {
+	color: hsl(215, 22%, 25%); 
+	background-color: #FCDC00;
+}
+
+.typescript, .css, .react, .docker {
+	color: white; 
+	background-color: #4183f5; 
+}
+
+.heroku {
+	color: white;
+	background-color: #7E57C2;
+}
+
+.hashtag.heading {
+	font-size: 2rem;
+	text-transform: capitalize;
+}
+
+
+@media screen and (min-width: 888px) {
+	.hashtag.heading {
+		font-size: 3rem;
+	}
+}

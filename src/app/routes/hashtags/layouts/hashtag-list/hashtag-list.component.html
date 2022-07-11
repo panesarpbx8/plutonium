@@ -1,0 +1,7 @@
+<div class="hashtags">
+  <a *ngFor="let hashtag of hashtags" routerLink="/hashtags/{{ hashtag }}">
+    <button [class]="'hashtag '+ heading + ' ' + hashtag">
+      {{ hashtag }}
+    </button>
+  </a>
+</div>

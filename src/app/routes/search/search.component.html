@@ -1,0 +1,16 @@
+<section class="route">
+  <h1 class="page-heading force-center">Search Articles</h1>
+
+  <div class="search-input">
+    <input type="search" name="search" [formControl]="search" class="rounded" 
+      placeholder="Search articles" autocomplete="off">
+  </div>
+
+  <ng-container *ngIf="articles$ | async as articles; else empty">
+    <app-article-list [articles]="articles"></app-article-list>
+  </ng-container>
+
+  <ng-template #empty>
+    <p class="empty">Empty List</p>
+  </ng-template>
+</section>

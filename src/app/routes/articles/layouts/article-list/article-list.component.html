@@ -1,0 +1,14 @@
+<div class="article-list">
+  <div class="article" *ngFor="let article of articles;">
+    <div class="article__cover" routerLink="/articles/{{ article.slug }}">
+      <img [src]="article.coverUrl" [alt]="article.title">
+      <!-- <span>{{ article.createdAt }}</span> -->
+    </div>
+    <div class="article__content">
+      <h1 routerLink="/articles/{{ article.slug }}">{{ article.title }}</h1>
+      <p routerLink="/articles/{{ article.slug }}">{{ article.headline }}</p>
+    </div>
+    <button class="btn btn__primary" routerLink="/articles/{{ article.slug }}">Read more</button>
+  </div>
+</div>
+

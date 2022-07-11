@@ -1,0 +1,6 @@
+<div class="toc">
+  <h2>Contents</h2>
+  <div *ngFor="let toc of tocs">
+    <a (click)="scroll(toc.anchor)">{{ toc.text }}</a>
+  </div>
+</div>
