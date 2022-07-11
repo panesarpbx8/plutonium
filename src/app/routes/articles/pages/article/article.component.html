@@ -1,4 +1,4 @@
-<article *ngIf="article$ | async as article; else loading">
+<article itemscope itemtype="http://schema.org/Article" *ngIf="article$ | async as article; else loading">
   <app-article-hero [article]="article"></app-article-hero>
 
   <section class="route">
