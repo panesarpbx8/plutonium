@@ -12,7 +12,8 @@
     "build:ssr": "ng build && ng run universal:server",
     "prerender": "ng run universal:prerender",
     "git": "git add . && git commit -m refactor",
-    "push": "git push origin master"
+    "push": "git push origin master",
+    "logs": "heroku logs -t -a plutonium-dev"
   },
   "private": true,
   "dependencies": {
