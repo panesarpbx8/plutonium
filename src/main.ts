@@ -12,7 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
   platformBrowserDynamic()
     .bootstrapModule(AppModule)
     .catch(console.error);
-
-  console.log('hello');
-  
 });

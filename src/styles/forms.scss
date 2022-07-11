@@ -1,0 +1,51 @@
+// # imported
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label, input, select {
+	user-select: none;
+	outline: none;
+}
+
+input {
+	width: 100%;
+	padding: .5rem .75rem;
+	font-size: 1rem;
+	
+	background-color: var(--bgv);
+	color: var(--text);
+  border: 2px solid transparent;
+  
+	transition: border 200ms ease;
+
+	&:focus {
+    border: 2px solid var(--focus);
+	}
+
+	&::placeholder {
+		color: var(--input-placeholder);
+	}
+}
+
+input.dark {
+	background-color: var(--bgv-dark);
+	color: var(--text-dark);
+	
+	&:focus {
+    border: 2px solid var(--focus-dark);
+	}
+	
+	&::placeholder {
+		color: var(--input-placeholder-dark);
+	}
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: .75rem;
+}

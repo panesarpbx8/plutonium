@@ -1,0 +1,18 @@
+<ng-container *ngIf="dialog$ | async as dialog">
+  <div [ngClass]="getDialogContainerClassList(dialog.type)">
+    <div class="dialog__heading">
+      <h1>{{ dialog.heading }}</h1>
+    </div>
+    <div class="dialog__sub-heading" *ngIf="dialog.subHeading">
+      <p>{{ dialog.subHeading }}</p>
+    </div>
+    <div class="dialog__buttons">
+      <button *ngIf="dialog.dangerButtonText" class="dialog__danger-button">
+        {{ dialog.dangerButtonText }}
+      </button>
+      <button *ngIf="dialog.successButtonText" class="dialog__success-button">
+        {{ dialog.successButtonText }}
+      </button>
+    </div>
+  </div>  
+</ng-container>

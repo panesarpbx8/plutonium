@@ -1,0 +1,66 @@
+// #imported
+
+:target::before {
+  content: '';
+  display: block;
+  height: 5rem;
+  margin-top: -9rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--selection-background);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--bg);
+  // transition: background-color 200ms ease;
+	color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+body, header {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--anchor-color);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+i {
+  color: var(--primary-color);
+}
+
+@font-face {
+  font-family: 'aquire';
+  src: url('/assets/fonts/aquire.otf');
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('/assets/fonts/gilroy-light.otf');
+}
+
+@font-face {
+  font-family: 'gilroy-bold';
+  src: url('/assets/fonts/gilroy-bold.otf');
+}

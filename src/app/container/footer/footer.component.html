@@ -1,0 +1,34 @@
+<footer class="footer">
+  <div class="footer__bg">
+    <div class="footer__main">
+      <div class="footer__content">
+        <div class="footer__info">
+          <div routerLink="/" class="brand">{{ constants.brand }}</div>
+          <p>© Copyright 2022 {{ constants.brand }}</p>
+          <p>All rights reserved</p>
+          <p>Developed by <a target="_blank" rel="noopener" rel="noreferrer" [href]="constants.creatorLink">{{ constants.creator }}</a></p>
+        </div>
+
+        <div class="footer__links">
+          <h1>Links</h1>
+          <a routerLink="/articles">Articles</a>
+          <a routerLink="/hashtags">Hashtags</a>
+          <a routerLink="/login">Login</a>
+          <a [href]="constants.social.github" target="_blank" rel="noopener" rel="noreferrer">Github</a>
+        </div>
+
+        <div class="footer__links">
+          <h1>Tools</h1>
+          <a routerLink="/tools/kanban">KanBan</a>
+        </div>
+        
+        <div class="footer__links">
+          <h1>Follow us</h1>
+          <a [href]="constants.social.youtube" target="_blank" rel="noopener" rel="noreferrer">Youtube</a>
+          <a [href]="constants.social.instagram" target="_blank" rel="noopener" rel="noreferrer">Instagram</a>
+          <a [href]="constants.social.twitter" target="_blank" rel="noopener" rel="noreferrer">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

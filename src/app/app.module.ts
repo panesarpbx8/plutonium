@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { constants } from './app.constants';
 import { routes } from './app.routes';
 
 @NgModule({
@@ -17,7 +20,9 @@ import { routes } from './app.routes';
       anchorScrolling: 'enabled',
       scrollOffset: [0, 100], // 100px
     }),
-    FormsModule,
+    provideFirebaseApp(() => initializeApp(constants.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     HttpClientModule,
   ],
   bootstrap: [AppComponent]

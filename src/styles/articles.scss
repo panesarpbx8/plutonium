@@ -1,0 +1,60 @@
+
+.article-body {
+  margin-bottom: 8rem;
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin: 4rem 0 1.5rem 0;
+    // color: var(--accent-color);
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+  
+  pre {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #c3cee3;
+    background: #283036;
+    font-family: 'Fira Code', monospace;
+    border-radius: 5px;
+    
+    max-width: calc(100vw - (1rem * 2));
+    overflow-x: auto;
+    
+    /* width */
+    &::-webkit-scrollbar {
+      height: .5rem;
+    }
+  
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: var(--primary-light); 
+    }
+  
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary); 
+    }
+  
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-dark); 
+    }
+  }  
+}
+
+
+@media screen and (min-width: 888px) {  
+  .article-body {
+    pre {
+      padding: 2rem 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+:root {
+  --primary-color: #34aaa2;
+  --primary-light: #3ab6ae25;
+  --primary-dark: #2c9d95;
+	
+  --accent-color: #f38f2b;
+  --accent-light: #f38f2b25;
+  --accent-dark: #ea8723;
+
+  --anchor-color: #4183f5;
+
+	--success-color: hsl(137, 58%, 45%);
+	--success-hover: hsl(137, 58%, 42%);
+	--success-light: hsl(137, 58%, 45%, .1);
+
+	--danger-color: hsl(354, 79%, 56%);
+	--danger-hover: hsl(354, 79%, 44%);
+	--danger-light: hsl(354, 79%, 56%, .1);
+  
+	--nav-link: #6a747f;
+	--nav-link-hover: var(--primary-color);
+
+  --shadow: 0 0 25px rgba(115, 125, 133, 0.137);
+  --selection-background: var(--primary-light);
+  
+  --bg: #ffffff;
+  --bgv: hsl(210, 17%, 96%);
+	--text: #46566d;
+  --focus: hsl(215, 16%, 90%);
+	--input-placeholder: #c3ced3;
+  --default-breakpoint: 888px;
+}

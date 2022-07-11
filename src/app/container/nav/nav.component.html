@@ -1,0 +1,37 @@
+<header>
+  <nav>
+    <div class="logo">
+      <a routerLink="/" class="brand">{{ constants.brand }}</a>
+    </div>
+      
+    <div class="links">
+      <div class="link">
+        <a routerLink="/articles" routerLinkActive="active">Articles</a>
+      </div>
+      
+      <div class="link">
+        <a routerLink="/hashtags" routerLinkActive="active">Hashtags</a>
+      </div>    
+
+      <div class="link">
+        <a routerLink="/search" routerLinkActive="active">Search</a>
+      </div>    
+    </div>
+
+    <div class="buttons">      
+      <a *ngIf="user$ | async" (click)="logout()">
+        <i class="fa-solid fa-arrow-right-from-bracket nav-icon"></i>
+      </a>
+
+      <a routerLink="/profile" *ngIf="user$ | async as user; else noUser">
+        <img [src]="user.photoURL" class="user-image rounded">
+      </a>
+      
+      <ng-template #noUser>
+        <a routerLink="/login">
+          <i class="fa-solid fa-user-astronaut nav-icon"></i>
+        </a>
+      </ng-template>
+    </div>
+  </nav>
+</header>
