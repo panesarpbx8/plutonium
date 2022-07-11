@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ng serve",
-    "build": "ng build",
+    "build": "yarn build:ssr",
+    "start": "yarn serve:ssr",
     "dev:ssr": "ng run universal:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run universal:server",
