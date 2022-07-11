@@ -4,7 +4,7 @@
   "description": "",
   "license": "MIT",
   "scripts": {
-    "start": "yarn serve:ssr",
+    "start": "yarn start:ssr",
     "start:ssr": "node dist/server/main.js",
     "dev": "ng serve",
     "dev:ssr": "ng run universal:serve-ssr",
